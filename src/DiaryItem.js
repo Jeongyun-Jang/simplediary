@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
 const DiaryItem = ({ onEdit, onRemove, id, author, content, emotion, created_date }) => {
     
@@ -20,7 +20,6 @@ const DiaryItem = ({ onEdit, onRemove, id, author, content, emotion, created_dat
   
     const handleEdit = () => {
       if (localContent.length < 5) {
-        localContentInput.current.focus();
         return;
       }
   
@@ -66,5 +65,5 @@ const DiaryItem = ({ onEdit, onRemove, id, author, content, emotion, created_dat
     );
   };
   
-  export default DiaryItem;
+  export default React.memo(DiaryItem);
   
